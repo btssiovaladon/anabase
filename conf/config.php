@@ -2,7 +2,7 @@
 /** 
  * config.php : configuration principale de l'application [version déploiement]
  *
- * @project	   plum.mvc
+ * @project	   anabase
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
  * @author     ?

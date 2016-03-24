@@ -1,8 +1,8 @@
 <?php
 /**
- * modele.exemple[modele]
+ * modele.anabase
  *
- * @project	   plum.mvc
+ * @project	   anabase
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 */	
@@ -11,7 +11,7 @@
 
 if(!defined('PLUM_RACINE')) exit(0);
 
-class Modele_exemple extends Plum_modele{
+class Modele_anabase extends Plum_modele{
 
 	public function __construct(){
 		parent::__construct();//obligatoire
@@ -42,6 +42,7 @@ class Modele_exemple extends Plum_modele{
 	}
 
 //<!-- - - - - - - - - - - - -  INSERT- - - - - - - - - - - -->
+
 	public function ajouterExemple($data){
 		$sql="insert into plum_mvc_exemple values('',?)";
 		$sth = $this->database->prepare($sql);
@@ -51,6 +52,7 @@ class Modele_exemple extends Plum_modele{
 	}
 	
 //<!-- - - - - - - - - - - - -  UPDATE- - - - - - - - - - - -->
+
 	public function modifierExemple($data){
 		$sql="update plum_mvc_exemple SET lib=? WHERE id=?";
 		$sth = $this->database->prepare($sql);
@@ -60,6 +62,7 @@ class Modele_exemple extends Plum_modele{
 	}
 	
 	//<!-- - - - - - - - - - - - -  DELETE- - - - - - - - - - - -->
+	
 	public function supprimerExemple($data){
 		$sql="delete from plum_mvc_exemple WHERE id=?";
 		$sth = $this->database->prepare($sql);
@@ -68,6 +71,7 @@ class Modele_exemple extends Plum_modele{
 		$this->execute($sth,$param);
 	}
 //<!-- - - - - - - - - - - - -  PRIVATE- - - - - - - - - - - -->
+
 	private function execute(&$sth,$param=array()){
 		$t=$sth->execute($param);
 		if(!$t) {

@@ -1,13 +1,12 @@
 <?php
-/*A INTEGRER DANS LE TEMPLATE PLUM...........et DANS PLUM_vue
-* obligatoire. 
-* s'appuie sur PATH_EXPOSE
-*
-* fichiers supplémentaires à utiliser
-*
-* chemin du fichier dans /www/expose/. $configXvuE['CSS'][0]="a1.css" sera dans PATH_www_EXPOSE."/css/"
-* $vue->getCss(0); récupère le chemin du fichier css si défini sinon retourne false
-* ie getJs() et getImage()
+/**
+ * anabase
+ *
+ * Config des vues
+ *
+ *@project	   anabase
+ * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 */
 $configXtmpVue['author']="thierry.bogusz";
 $configXtmpVue['site']="plum.mvc boonum";

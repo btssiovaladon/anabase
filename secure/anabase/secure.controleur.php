@@ -13,7 +13,7 @@
 # Format:
 #
 # controleur:commnentaire:groupe1[:groupe2:...:groupen]
-#exemple:gestion des exemples(ajout/modif/sup/liste):@exemple
-authentification:@ALL
-exemple:@exemple
-accueil:@exemple
+#
+# AUTORISATION @ALL pour TOUS LES CONTROLEUR : ANABASE
+#
+organismePayeur:@ALL

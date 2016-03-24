@@ -1,5 +1,5 @@
 #/**
-# * secure.user liste des utilisateurs
+# * secure.user liste des utilisateurs. AUCUNE AUTHENTIFICATION POUR ANABASE
 # *
 # * @project    secure.admin
 # * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
@@ -13,4 +13,4 @@
 # Format:
 #
 # user:MD5password:Nom:group:email:date:heure:limiteMinute
-exemple:exemple:User de exemple:@exemple:no mail
+admin:admin:Administrateur:@admin:no mail

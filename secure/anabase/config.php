@@ -1,13 +1,18 @@
 <?php
 /**
+ * anabase
+ *
  * Config configuration secure/USER
  *
-* @project	   exemple
+* @project	   anabase
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 */
 
-$configXuSec['secret']="cILEYD%Jêzàob_cleandfjùùobligaop";//obligatoire. doit être différente pour chaque package secure
+$configXuSec['secret']="cILEanabaseàob_cleandfjùùjjjobligaop";//obligatoire. doit être différente pour chaque package secure
+
+//file
+$configXuSec['io']="file"; //contrôle des utilisateur dans secure.user.php
 
 //database
 /* s'appuie sur une table 
@@ -20,5 +25,3 @@ $configXuSec['tableUser']='plum_mvc_table_user';
 $configXuSec['user']='root';
 $configXuSec['pwd']='';
 */
-//file
-$configXuSec['io']="file";

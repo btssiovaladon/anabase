@@ -2,7 +2,7 @@
 /**
  * Config configuration du package
  *
-* @project	   exemple
+* @project	   anabase
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 */
