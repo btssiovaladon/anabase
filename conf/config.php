@@ -7,7 +7,7 @@
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
  * @author     ?
 */
-$configXuZe['DEFAUT_PACKAGE']='exemple';//uniquement dans config.php
+$configXuZe['DEFAUT_PACKAGE']='anabase';//uniquement dans config.php
 
 /*----------------- pour information  
 $configXuZe['USER_SECURE']='anabase';//obligatoire. config.php ou  défini ou re-défini par le config de chaque package

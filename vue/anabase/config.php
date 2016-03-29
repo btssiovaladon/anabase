@@ -8,7 +8,7 @@
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 */
-$configXtmpVue['author']="thierry.bogusz";
-$configXtmpVue['site']="plum.mvc boonum";
+$configXtmpVue['author']="ppe2.3";
+$configXtmpVue['site']="anabase";
 $configXtmpVue['aide']['caption']="Aide";
-$configXtmpVue['aide']['href']="";
+$configXtmpVue['aide']['href']="http://ppe.boonum.fr/doku.php?id=slam:pages:ppe2.3";

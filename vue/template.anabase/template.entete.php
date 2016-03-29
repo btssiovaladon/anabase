@@ -74,11 +74,11 @@ function template_entete_onload_TODO(){
 					
 					?>
 					
-				<a  href="<?php echo $this->c->forgeUri($this->package,'authentification','deconnecter',array());?>">
+					<a  href="<?php echo $this->c->forgeUri($this->package,'authentification','deconnecter',array());?>">
 					<span  class="deconnexion" style="float:right;font-size: 12px;color: #4B4B4B;font-style:normal;">
 						<img width="21" height="21" style="vertical-align:middle"; src="<?php echo PATH_WWW_TEMPLATE."image/deconnexion.gif";?>" title="Déconnexion" alt="Déconnexion">Déconnexion
 					</span>	
-				</a>
+					</a>
 				<?php }?>
 		</div>
 		

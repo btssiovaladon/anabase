@@ -11,11 +11,11 @@ $configXuZe ['APP_NAME']="Application ANABASE";//obligatoire, de préférence dans
 
 $configXuZe['USER_SECURE']='anabase';//obligatoire, dans config.php ou  défini ou re-défini par le config de chaque package
 
-$configXuZe['DEFAUT_CONTROLEUR']='authentification';//config.php ou  défini ou re-défini par le config de chaque package
+$configXuZe['DEFAUT_CONTROLEUR']='accueil';//config.php ou  défini ou re-défini par le config de chaque package
 
 $configXuZe['DEFAUT_ACTION']='init';//config.php ou  défini ou re-défini par le config de chaque package
 
-$configXuZe['TEMPLATE']='plum'; //obligatoire, config.php ou  défini ou re-défini par le config de chaque package
+$configXuZe['TEMPLATE']='anabase'; //obligatoire, config.php ou  défini ou re-défini par le config de chaque package
 
 /*
 * obligatoire. 

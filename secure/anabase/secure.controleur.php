@@ -16,4 +16,5 @@
 #
 # AUTORISATION @ALL pour TOUS LES CONTROLEUR : ANABASE
 #
+accueil:@ALL
 organismePayeur:@ALL
