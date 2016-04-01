@@ -23,11 +23,11 @@
 	$m++;
 	$items[$m]=new Plum_data();
 	$items[$m]->controleur="accueil";
-	$items[$m]->action="init";
+	$items[$m]->action="fermer";
 	$items[$m]->caption="FERMER";
 	
 	$this->items=$items; //indispensable
 	
-	//onglet actif par défaut si aucun menu choisi (controleur ou url)
+	//onglet actif par défaut si aucun menu connu
 	$this->actif=0;
 ?>

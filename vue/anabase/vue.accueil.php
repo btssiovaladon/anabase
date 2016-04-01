@@ -47,7 +47,7 @@
 				<li class="coloradmin">Réglements</li>
 			</a>
 		
-			<a href="<?php echo $this->c->forgeUri($this->package,'organismePayeur', 'init', array());?>">
+			<a href="<?php echo $this->c->forgeUri($this->package,'organismePayeur', 'mnuAjouter', array());?>">
 				<li class="coloradmin">Organismes payeurs</li>
 			</a>
 		
