@@ -1,4 +1,7 @@
 <?php
+
+//utiliser include_once(PATH_FONCTION."plum.fonction.php");
+
 function func_date_us_vers_francais($date){
 	$dateTab = explode("-", $date);
 	$jour = $dateTab[2];

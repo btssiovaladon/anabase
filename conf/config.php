@@ -12,7 +12,7 @@ $configXuZe['DEFAUT_PACKAGE']='anabase';//uniquement dans config.php
 /*----------------- pour information  
 $configXuZe['USER_SECURE']='anabase';//obligatoire. config.php ou  défini ou re-défini par le config de chaque package
 
-$configXuZe['DEFAUT_CONTROLEUR']='authentification';//facultatif. config.php ou  défini ou re-défini par le config de chaque package
+$configXuZe['DEFAUT_CONTROLEUR']='accueil';//facultatif. config.php ou  défini ou re-défini par le config de chaque package
 
 $configXuZe['DEFAUT_ACTION']='init';//facultatif. config.php ou  défini ou re-défini par le config de chaque package
 

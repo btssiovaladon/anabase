@@ -13,4 +13,4 @@
 # Format:
 #
 # user:MD5password:Nom:group:email:date:heure:limiteMinute
-admin:admin:Administrateur:@admin:no mail
+clara:clara:Utilisateur autorisé:@util:no mail

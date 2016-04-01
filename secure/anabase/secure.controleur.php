@@ -1,7 +1,7 @@
 #/**
 # * secure.controleur authorisation d'accès aux différents contrôleurs
 # *
-# * @project	secure.admin
+# * @project	anabase
 # * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
 # * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 #*/
@@ -16,5 +16,11 @@
 #
 # AUTORISATION @ALL pour TOUS LES CONTROLEUR : ANABASE
 #
+authentification:@ALL
 accueil:@ALL
 organismePayeur:@ALL
+congressiste:@ALL
+session:@ALL
+hotellerie:@ALL
+activite:@ALL
+reglement:@ALL

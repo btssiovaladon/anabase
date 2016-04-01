@@ -63,6 +63,24 @@ class Controleur_organismePayeur extends Plum_Controleur{
  	}
 	
 	//-----------------------------------------------------------------------------------*
+	//..........  vue ... organismePayeurListe
+	//-----------------------------------------------------------------------------------*	
+
+	public function action_onClickListe(){
+
+		$v = $this->useVue("organismePayeurModifierSupprimer");
+
+		//  Mémoriser l'id de l'organisme choisi
+		$this->persist->set("NUM_ORGANISME",$this->paramUrl->id);
+
+		$data=$this->modele->getOrganismePayeurById($this->paramUrl->id);
+		
+		$v->data->nomOrganisme = $data["NOM_ORGANISME"];
+		$v->data->adresseOrganisme = $data["ADRESSE_ORGANISME"];
+		
+	}
+	
+	//-----------------------------------------------------------------------------------*
 	//..........  vue ... organismePayeurModifierSupprimer
 	//-----------------------------------------------------------------------------------*	
 	
@@ -100,24 +118,6 @@ class Controleur_organismePayeur extends Plum_Controleur{
 		$this->action_mnuLister();
 	
  	}
-	
-	//-----------------------------------------------------------------------------------*
-	//..........  vue ... organismePayeurListe
-	//-----------------------------------------------------------------------------------*	
-
-	public function action_onClickListe(){
-
-		$v = $this->useVue("organismePayeurModifierSupprimer");
-
-		//  Mémoriser l'id de l'organisme choisi
-		$this->persist->set("NUM_ORGANISME",$this->paramUrl->id);
-
-		$data=$this->modele->getOrganismePayeurById($this->paramUrl->id);
-		
-		$v->data->nomOrganisme = $data["NOM_ORGANISME"];
-		$v->data->adresseOrganisme = $data["ADRESSE_ORGANISME"];
-		
-	}
 	
 	//-----------------------------------------------------------------------------------*
 	//..........  contrôles ... contrôler les champs des formulaires 
