@@ -14,8 +14,10 @@ if(!defined('PLUM_RACINE')) exit(0);
 class Modele_organismePayeur extends Plum_modele{
 
 	public function __construct(){
-		parent::__construct();//obligatoire
+		//   Obligatoire
+		parent::__construct();
 		
+		//  Connection à la base de données
 		$this->connectDb();
 	}
 

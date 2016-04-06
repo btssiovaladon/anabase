@@ -101,7 +101,7 @@ Define('PATH_WWW',$dirname."/");
 			
 			define('PATH_WWW_TEMPLATE',PATH_WWW."template.".TEMPLATE."/");
 			
-			define('PATH_WWW_EXPOSE',PATH_WWW."expose/"); //contient les fichiers css, js et image supplémentaires.utilisé par Plum_vue
+			define('PATH_WWW_EXPOSE',PATH_WWW."expose/"); //contient les fichiers css, js et image supplémentaires.utilisées par Plum_vue
 
 			//include des fichiers php externes
 			define('PATH_INCLUDE', PLUM_RACINE."include/");

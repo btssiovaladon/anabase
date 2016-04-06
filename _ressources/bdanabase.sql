@@ -1,197 +1,53 @@
-# -----------------------------------------------------------------------------
-#       TABLE : FACTURE
-# -----------------------------------------------------------------------------
+-- phpMyAdmin SQL Dump
+-- version 4.1.4
+-- http://www.phpmyadmin.net
+--
+-- Client :  127.0.0.1
+-- Généré le :  Mer 06 Avril 2016 à 17:02
+-- Version du serveur :  5.6.15-log
+-- Version de PHP :  5.4.24
 
-CREATE TABLE IF NOT EXISTS FACTURE
- (
-   NUM_FACTURE INTEGER(2) NOT NULL  ,
-   NUM_CONGRESSISTE SMALLINT(1) NOT NULL  ,
-   DATE_FACTURE DATE NULL  ,
-   CODE_REGLEMENT BOOL NULL  
-   , PRIMARY KEY (NUM_FACTURE) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       INDEX DE LA TABLE FACTURE
-# -----------------------------------------------------------------------------
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
-CREATE UNIQUE INDEX I_FK_FACTURE_CONGRESSISTE
-     ON FACTURE (NUM_CONGRESSISTE ASC);
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES latin1 */;
 
-# -----------------------------------------------------------------------------
-#       TABLE : CONGRESSISTE
-# -----------------------------------------------------------------------------
+--
+-- Base de données :  `bdanabase`
+--
 
-CREATE TABLE IF NOT EXISTS CONGRESSISTE
- (
-   NUM_CONGRESSISTE SMALLINT(1) NOT NULL  ,
-   NUM_ORGANISME SMALLINT(1) NULL  ,
-   NUM_HOTEL SMALLINT(1) NOT NULL  ,
-   NOM_CONGRESSISTE CHAR(32) NULL  ,
-   PRÉNOM_CONGRESSISTE CHAR(32) NULL  ,
-   ADRESSE_CONGRESSISTE CHAR(32) NULL  ,
-   TEL_CONGRESSISTE CHAR(10) NULL  ,
-   DATE_INSCRIPTION DATE NULL  ,
-   CODE_ACCOMPAGNATEUR SMALLINT(1) NULL  
-   , PRIMARY KEY (NUM_CONGRESSISTE) 
- ) 
- comment = "";
+-- --------------------------------------------------------
 
-# -----------------------------------------------------------------------------
-#       INDEX DE LA TABLE CONGRESSISTE
-# -----------------------------------------------------------------------------
+--
+-- Structure de la table `congressiste`
+--
 
+CREATE TABLE IF NOT EXISTS `congressiste` (
+  `NUM_CONGRESSISTE` smallint(1) NOT NULL DEFAULT '0',
+  `NUM_ORGANISME` smallint(1) DEFAULT NULL,
+  `NUM_HOTEL` smallint(1) NOT NULL,
+  `NOM_CONGRESSISTE` char(32) COLLATE latin1_general_ci DEFAULT NULL,
+  `PRÉNOM_CONGRESSISTE` char(32) COLLATE latin1_general_ci DEFAULT NULL,
+  `ADRESSE_CONGRESSISTE` char(32) COLLATE latin1_general_ci DEFAULT NULL,
+  `TEL_CONGRESSISTE` char(10) COLLATE latin1_general_ci DEFAULT NULL,
+  `DATE_INSCRIPTION` date DEFAULT NULL,
+  `CODE_ACCOMPAGNATEUR` smallint(1) DEFAULT NULL,
+  PRIMARY KEY (`NUM_CONGRESSISTE`),
+  KEY `I_FK_CONGRESSISTE_ORGANISME_PAY` (`NUM_ORGANISME`),
+  KEY `I_FK_CONGRESSISTE_HOTEL` (`NUM_HOTEL`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
-CREATE  INDEX I_FK_CONGRESSISTE_ORGANISME_PAY
-     ON CONGRESSISTE (NUM_ORGANISME ASC);
+--
+-- Contenu de la table `congressiste`
+--
 
-CREATE  INDEX I_FK_CONGRESSISTE_HOTEL
-     ON CONGRESSISTE (NUM_HOTEL ASC);
+INSERT INTO `congressiste` (`NUM_CONGRESSISTE`, `NUM_ORGANISME`, `NUM_HOTEL`, `NOM_CONGRESSISTE`, `PRÉNOM_CONGRESSISTE`, `ADRESSE_CONGRESSISTE`, `TEL_CONGRESSISTE`, `DATE_INSCRIPTION`, `CODE_ACCOMPAGNATEUR`) VALUES
+(1, 4, 2, 'Bogusz', 'Thierry', 'Limoges', '0908234567', '2016-04-01', 2);
 
-# -----------------------------------------------------------------------------
-#       TABLE : SESSION
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS SESSION
- (
-   NUM_SESSION SMALLINT(1) NOT NULL  ,
-   DATE_SESSION DATE NULL  ,
-   HEURE_SESSION TIME NULL  ,
-   NOM_SESSION CHAR(32) NULL  ,
-   PRIX_SESSION INTEGER(2) NULL  
-   , PRIMARY KEY (NUM_SESSION) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       TABLE : ORGANISME_PAYEUR
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS ORGANISME_PAYEUR
- (
-   NUM_ORGANISME SMALLINT(1) NOT NULL  ,
-   NOM_ORGANISME CHAR(32) NULL  ,
-   ADRESSE_ORGANISME CHAR(32) NULL  
-   , PRIMARY KEY (NUM_ORGANISME) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       TABLE : ACTIVITÉ
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS ACTIVITE
- (
-   NUM_ACTIVITE SMALLINT(1) NOT NULL  ,
-   NOM_ACTIVITE CHAR(32) NULL  ,
-   DATE_ACTIVITE DATE NULL  ,
-   HEURE_ACTIVITE TIME NULL  ,
-   PRIX_ACTIVITE INTEGER(2) NULL  
-   , PRIMARY KEY (NUM_ACTIVITE) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       TABLE : HOTEL
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS HOTEL
- (
-   NUM_HOTEL SMALLINT(1) NOT NULL  ,
-   NOM__HOTEL CHAR(32) NULL  ,
-   ADRESSE__HOTEL CHAR(32) NULL  ,
-   NOMBRE_ETOILES SMALLINT(1) NULL  ,
-   PRIX_PARTICIPANT DECIMAL(5,2) NULL  ,
-   PRIX_SUPPL DECIMAL(5,2) NULL  
-   , PRIMARY KEY (NUM_HOTEL) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       TABLE : PARTICIPATION_ACTIVITE
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS PARTICIPATION_ACTIVITE
- (
-   NUM_CONGRESSISTE SMALLINT(1) NOT NULL  ,
-   NUM_ACTIVITE SMALLINT(1) NOT NULL  
-   , PRIMARY KEY (NUM_CONGRESSISTE,NUM_ACTIVITE) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       INDEX DE LA TABLE PARTICIPATION_ACTIVITE
-# -----------------------------------------------------------------------------
-
-
-CREATE  INDEX I_FK_PARTICIPATION_ACTIVITE_CON
-     ON PARTICIPATION_ACTIVITE (NUM_CONGRESSISTE ASC);
-
-CREATE  INDEX I_FK_PARTICIPATION_ACTIVITE_ACT
-     ON PARTICIPATION_ACTIVITE (NUM_ACTIVITE ASC);
-
-# -----------------------------------------------------------------------------
-#       TABLE : PARTICIPATION_SESSION
-# -----------------------------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS PARTICIPATION_SESSION
- (
-   NUM_CONGRESSISTE SMALLINT(1) NOT NULL  ,
-   NUM_SESSION SMALLINT(1) NOT NULL  
-   , PRIMARY KEY (NUM_CONGRESSISTE,NUM_SESSION) 
- ) 
- comment = "";
-
-# -----------------------------------------------------------------------------
-#       INDEX DE LA TABLE PARTICIPATION_SESSION
-# -----------------------------------------------------------------------------
-
-
-CREATE  INDEX I_FK_PARTICIPATION_SESSION_CONG
-     ON PARTICIPATION_SESSION (NUM_CONGRESSISTE ASC);
-
-CREATE  INDEX I_FK_PARTICIPATION_SESSION_SESS
-     ON PARTICIPATION_SESSION (NUM_SESSION ASC);
-
-
-# -----------------------------------------------------------------------------
-#       CREATION DES REFERENCES DE TABLE
-# -----------------------------------------------------------------------------
-
-
-ALTER TABLE FACTURE 
-  ADD FOREIGN KEY FK_FACTURE_CONGRESSISTE (NUM_CONGRESSISTE)
-      REFERENCES CONGRESSISTE (NUM_CONGRESSISTE) ;
-
-
-ALTER TABLE CONGRESSISTE 
-  ADD FOREIGN KEY FK_CONGRESSISTE_ORGANISME_PAYEUR (NUM_ORGANISME)
-      REFERENCES ORGANISME_PAYEUR (NUM_ORGANISME) ;
-
-
-ALTER TABLE CONGRESSISTE 
-  ADD FOREIGN KEY FK_CONGRESSISTE_HOTEL (NUM_HOTEL)
-      REFERENCES HOTEL (NUM_HOTEL) ;
-
-
-ALTER TABLE PARTICIPATION_ACTIVITE 
-  ADD FOREIGN KEY FK_PARTICIPATION_ACTIVITE_CONGRE (NUM_CONGRESSISTE)
-      REFERENCES CONGRESSISTE (NUM_CONGRESSISTE) ;
-
-
-ALTER TABLE PARTICIPATION_ACTIVITE 
-  ADD FOREIGN KEY FK_PARTICIPATION_ACTIVITE_ACTIVI (NUM_ACTIVITE)
-      REFERENCES ACTIVITE (NUM_ACTIVITE) ;
-
-
-ALTER TABLE PARTICIPATION_SESSION 
-  ADD FOREIGN KEY FK_PARTICIPATION_SESSION_CONGRES (NUM_CONGRESSISTE)
-      REFERENCES CONGRESSISTE (NUM_CONGRESSISTE) ;
-
-
-ALTER TABLE PARTICIPATION_SESSION 
-  ADD FOREIGN KEY FK_PARTICIPATION_SESSION_SESSION (NUM_SESSION)
-      REFERENCES SESSION (NUM_SESSION) ;
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

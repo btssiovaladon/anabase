@@ -11,8 +11,7 @@
 # Userfile
 #
 # Format:
-#
-# controleur:commnentaire:groupe1[:groupe2:...:groupen]
+# controleur:groupe1[:groupe2:...:groupen]
 #
 # AUTORISATION @ALL pour TOUS LES CONTROLEUR : ANABASE
 #

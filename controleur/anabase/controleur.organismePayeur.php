@@ -19,9 +19,9 @@ class Controleur_organismePayeur extends Plum_Controleur{
 		$this->modele = $this->useModele("organismePayeur");
 	}
 
-	//-----------------------------------------------------------------------------------*
-	//..........  actions ... menus
-	//-----------------------------------------------------------------------------------*
+	// ----------------------------------------------------------------------------------*
+	// ..........  menus ...													      ---*
+	// ----------------------------------------------------------------------------------*	 
 	
 	function action_mnuAjouter(){
 		//  Déclaration de la vue à utiliser
@@ -29,7 +29,6 @@ class Controleur_organismePayeur extends Plum_Controleur{
 		
 		//  Initialisation des champs de la vue
 		$v->data->nomOrganisme = "";
-
 		$v->data->adresseOrganisme = "";
 	}
 	
@@ -41,9 +40,9 @@ class Controleur_organismePayeur extends Plum_Controleur{
 			
 	}
 
-	//-----------------------------------------------------------------------------------*
-	//..........  vue ... organismePayeurAjouter
-	//-----------------------------------------------------------------------------------*	
+	// ----------------------------------------------------------------------------------*
+	// ..........  vue ... organismePayeurAjouter								      ---*
+	// ----------------------------------------------------------------------------------*
 
 	function action_onclickBoutonAjouter(){
 	
@@ -58,13 +57,14 @@ class Controleur_organismePayeur extends Plum_Controleur{
 
 		$this->modele->putOrganismePayeur($v->data->nomOrganisme, $v->data->adresseOrganisme);
 
-		$this->action_mnuAjouter(); //  Pour initialiser le formulaire
+		//  Pour initialiser le formulaire
+		$this->action_mnuAjouter(); 
 	
  	}
 	
-	//-----------------------------------------------------------------------------------*
-	//..........  vue ... organismePayeurListe
-	//-----------------------------------------------------------------------------------*	
+	// ----------------------------------------------------------------------------------*
+	// ..........  vue ... organismePayeurListe			                           	  ---*
+	// ----------------------------------------------------------------------------------*
 
 	public function action_onClickListe(){
 
@@ -75,14 +75,15 @@ class Controleur_organismePayeur extends Plum_Controleur{
 
 		$data=$this->modele->getOrganismePayeurById($this->paramUrl->id);
 		
+		//  Tansmettre les données à la vue
 		$v->data->nomOrganisme = $data["NOM_ORGANISME"];
 		$v->data->adresseOrganisme = $data["ADRESSE_ORGANISME"];
 		
 	}
 	
-	//-----------------------------------------------------------------------------------*
-	//..........  vue ... organismePayeurModifierSupprimer
-	//-----------------------------------------------------------------------------------*	
+	// ----------------------------------------------------------------------------------*
+	// ..........  vue ... organismePayeurModifierSupprimer	                          ---*
+	// ----------------------------------------------------------------------------------*
 	
 	function action_onClickBoutonModifier(){
 	
@@ -105,7 +106,7 @@ class Controleur_organismePayeur extends Plum_Controleur{
 		
 		$numOrganisme = $this->persist->get("NUM_ORGANISME");
 		
-		//  compter le nombre de congressiste dépendant de l'organisme payeur
+		//  compter le nombre de congressistes dépendant de l'organisme payeur
 		$countC = $this->modele->getCompteurCongressisteDependantOrganismePayeur($numOrganisme);
 		if($countC > 0){
 			$v->message = "SUPPRESSION IMPOSSIBLE : des congressistes dépendent de l'organisme payeur";
@@ -119,11 +120,12 @@ class Controleur_organismePayeur extends Plum_Controleur{
 	
  	}
 	
-	//-----------------------------------------------------------------------------------*
-	//..........  contrôles ... contrôler les champs des formulaires 
-	//								- Ajouter
-	//								- Modifier
-	//-----------------------------------------------------------------------------------*	
+	// ----------------------------------------------------------------------------------*
+	// ..........  contrôles ... 							                          ---*
+	// contrôler les champs des formulaires 				                          ---*
+	//								- Ajouter				                          ---*
+	//								- Modifier				                          ---*
+	// ----------------------------------------------------------------------------------*
 	private function controle(&$v){
 		
 		if(strlen($v->data->nomOrganisme)<3){

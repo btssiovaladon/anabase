@@ -53,12 +53,13 @@
 	</tr>
 	
 	<tr>
-		<td><input type="button" name="buttonModifier" value="Modifer" 
-		  onclick="pluma1.form.submit('<?php echo $this->c->forgeUriAction('onClickBoutonModifier',array());?>',-1)">
-		</td>	
-		
-		<td><input type="button" name="buttonSupprimer" value="Supprimer" 
-		  onclick="pluma1.form.submitWithConfirm('<?php echo $this->c->forgeUriAction('onClickBoutonSupprimer',array());?>',-1,'Confirmez la suppression')">
+		<td></td>
+		<td>
+			<input type="button" name="buttonModifier" value="Modifer" 
+				onclick="pluma1.form.submit('<?php echo $this->c->forgeUriAction('onClickBoutonModifier',array());?>',-1)">
+				
+			<input type="button" name="buttonSupprimer" value="Supprimer" 
+				onclick="pluma1.form.submitWithConfirm('<?php echo $this->c->forgeUriAction('onClickBoutonSupprimer',array());?>',-1,'Confirmez la suppression')">
 		</td>
 	</tr>
 	</table>

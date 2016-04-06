@@ -9,10 +9,11 @@
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 */
 
-$configXuSec['secret']="cILEanabaseàob_cleandfjùùjjjobligaop";//obligatoire. doit être différente pour chaque package secure
+//   Obligatoire. doit être différent pour chaque package secure
+$configXuSec['secret']="cILEanabaseàob_cleandfjùùjjjobligaop";
 
-//file
-$configXuSec['io']="file"; //contrôle des utilisateur dans secure.user.php
+//   file : contrôle des utilisateurs dans secure.user.php
+$configXuSec['io']="file"; 
 
 //database
 /* s'appuie sur une table 
