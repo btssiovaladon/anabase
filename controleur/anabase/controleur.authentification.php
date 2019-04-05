@@ -15,7 +15,7 @@ class Controleur_authentification extends Plum_Controleur{
 	}
 
 	//-----------------------------------------------------------------------------------*
-	//---------- définir les actions
+	//---------- dÃ©finir les actions
 	//-----------------------------------------------------------------------------------*
 	
 	function action_init(){
@@ -48,7 +48,7 @@ class Controleur_authentification extends Plum_Controleur{
 		$v->data->password=""; //ne pas se souvenir de l'identifiant
 		$v->data->user="";
 		
-		//return indispensable pour remplacer le contrôleur instancié par index
+		//return indispensable pour remplacer le contrÃ´leur instanciÃ© par index
 		return $this->execute("accueil","init"); 
 		
 	}

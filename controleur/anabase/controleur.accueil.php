@@ -21,7 +21,7 @@ class Controleur_accueil extends Plum_Controleur{
 		$v = $this->useVue("accueil");
 	}
 	
-	//Méthode exécutée sur fermeture d'une fonctionnalité
+	//MÃ©thode exÃ©cutÃ©e sur fermeture d'une fonctionnalitÃ©
 	function action_fermer(){
 		
 		$this->action_init();

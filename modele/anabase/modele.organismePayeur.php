@@ -7,7 +7,7 @@
  * @author     Thierry Bogusz <thbogusz@yahoo.fr>
 */	
 
-//::::contrôle vérifiant le passage par le super-contrôleur::::
+//::::contrÃ´le vÃ©rifiant le passage par le super-contrÃ´leur::::
 
 if(!defined('PLUM_RACINE')) exit(0);
 
@@ -17,7 +17,7 @@ class Modele_organismePayeur extends Plum_modele{
 		//   Obligatoire
 		parent::__construct();
 		
-		//  Connection à la base de données
+		//  Connection Ã  la base de donnÃ©es
 		$this->connectDb();
 	}
 
@@ -109,12 +109,12 @@ class Modele_organismePayeur extends Plum_modele{
 //<!-- - - - - - - - - - - - -  PRIVATE - - - - - - - - - - - -->
 
 	/**
-	*	EXECUTE une requête SQL
-	*	- Execute la requête avec PDO
-	*   - die : affiche les erreurs d'exécution et le nom de la fonction appelante
+	*	EXECUTE une requÃªte SQL
+	*	- Execute la requÃªte avec PDO
+	*   - die : affiche les erreurs d'exÃ©cution et le nom de la fonction appelante
 	*
-	* @param PDOStattement 	$sth	ressource requête sql. E/S.
-    * @param array			$param 	tableau des paramètres de la requête
+	* @param PDOStattement 	$sth	ressource requÃªte sql. E/S.
+    * @param array			$param 	tableau des paramÃ¨tres de la requÃªte
 	*
     * @return	void			
 	*/	

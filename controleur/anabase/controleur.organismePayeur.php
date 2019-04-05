@@ -15,7 +15,7 @@ class Controleur_organismePayeur extends Plum_Controleur{
 		//Obligatoire : Appel du constructeur de Plum_Controleur
 		parent::__construct($param);  
 		
-		// Modèle d'accès aux données
+		// ModÃ¨le d'accÃ¨s aux donnÃ©es
 		$this->modele = $this->useModele("organismePayeur");
 	}
 
@@ -24,7 +24,7 @@ class Controleur_organismePayeur extends Plum_Controleur{
 	// ----------------------------------------------------------------------------------*	 
 	
 	function action_mnuAjouter(){
-		//  Déclaration de la vue à utiliser
+		//  DÃ©claration de la vue Ã  utiliser
 		$v = $this->useVue("organismePayeurAjouter"); 
 		
 		//  Initialisation des champs de la vue
@@ -48,7 +48,7 @@ class Controleur_organismePayeur extends Plum_Controleur{
 	
 		$v = $this->useVue("organismePayeurAjouter");
 
-		//  Contrôles des champs du formulaire
+		//  ContrÃ´les des champs du formulaire
 		$ok = $this->controle($v); 
 		
 		if(!$ok){
@@ -70,12 +70,12 @@ class Controleur_organismePayeur extends Plum_Controleur{
 
 		$v = $this->useVue("organismePayeurModifierSupprimer");
 
-		//  Mémoriser l'id de l'organisme choisi
+		//  MÃ©moriser l'id de l'organisme choisi
 		$this->persist->set("NUM_ORGANISME",$this->paramUrl->id);
 
 		$data=$this->modele->getOrganismePayeurById($this->paramUrl->id);
 		
-		//  Tansmettre les données à la vue
+		//  Tansmettre les donnÃ©es Ã  la vue
 		$v->data->nomOrganisme = $data["NOM_ORGANISME"];
 		$v->data->adresseOrganisme = $data["ADRESSE_ORGANISME"];
 		
@@ -106,14 +106,14 @@ class Controleur_organismePayeur extends Plum_Controleur{
 		
 		$numOrganisme = $this->persist->get("NUM_ORGANISME");
 		
-		//  compter le nombre de congressistes dépendant de l'organisme payeur
+		//  compter le nombre de congressistes dÃ©pendant de l'organisme payeur
 		$countC = $this->modele->getCompteurCongressisteDependantOrganismePayeur($numOrganisme);
 		if($countC > 0){
-			$v->message = "SUPPRESSION IMPOSSIBLE : des congressistes dépendent de l'organisme payeur";
+			$v->message = "SUPPRESSION IMPOSSIBLE : des congressistes dÃ©pendent de l'organisme payeur";
 			return;
 		};
 		
-		//  Suppression autorisée		
+		//  Suppression autorisÃ©e		
 		$this->modele->deleteOrganismePayeur($numOrganisme);
 		
 		$this->action_mnuLister();
@@ -121,21 +121,21 @@ class Controleur_organismePayeur extends Plum_Controleur{
  	}
 	
 	// ----------------------------------------------------------------------------------*
-	// ..........  contrôles ... 							                          ---*
-	// contrôler les champs des formulaires 				                          ---*
+	// ..........  contrÃ´les ... 							                          ---*
+	// contrÃ´ler les champs des formulaires 				                          ---*
 	//								- Ajouter				                          ---*
 	//								- Modifier				                          ---*
 	// ----------------------------------------------------------------------------------*
 	private function controle(&$v){
 		
 		if(strlen($v->data->nomOrganisme)<3){
-			$v->message="Saisir au moins trois caractères";
+			$v->message="Saisir au moins trois caractÃ¨res";
 			$v->focus="nomOrganisme";
 			return false;
 		}
 		
 		if(strlen($v->data->adresseOrganisme)<5){
-			$v->message="Saisir au moins cinq caractères";
+			$v->message="Saisir au moins cinq caractÃ¨res";
 			$v->focus="adresseOrganisme";
 			return false;
 		}
